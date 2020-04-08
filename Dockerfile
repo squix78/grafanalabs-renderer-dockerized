@@ -18,7 +18,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repos
 
 FROM base as build
 
-ENV GRAFANA_RENDERER_VERSION=1.0.11
+ENV GRAFANA_RENDERER_VERSION=1.0.12
 ENV CXXFLAGS="-Wno-ignored-qualifiers -Wno-stringop-truncation -Wno-cast-function-type"
 
 RUN apk add git && \
