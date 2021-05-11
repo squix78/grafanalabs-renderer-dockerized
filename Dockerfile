@@ -13,7 +13,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repos
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk --no-cache upgrade && \
-    apk add --no-cache udev ttf-opensans chromium ca-certificates dumb-init && \
+    apk add --no-cache udev ttf-opensans unifont chromium ca-certificates dumb-init && \
     rm -rf /tmp/*
 
 FROM base as build
@@ -45,6 +45,8 @@ CMD [ "yarn", "run", "dev" ]
 
 FROM base
 LABEL maintainer="serhiy.makarenko@me.com"
+
+ENV NODE_ENV=production
 
 COPY --from=build /usr/src/app/node_modules node_modules
 COPY --from=build /usr/src/app/build build
