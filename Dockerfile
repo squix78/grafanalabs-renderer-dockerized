@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2021, Serhiy Makarenko
 
-FROM node:12-alpine AS base
+FROM node:14-alpine AS base
 
 ENV CHROME_BIN="/usr/bin/chromium-browser"
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
@@ -18,7 +18,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repos
 
 FROM base as build
 
-ENV GRAFANA_RENDERER_VERSION=2.0.1
+ENV GRAFANA_RENDERER_VERSION=2.1.0
 ENV CXXFLAGS="-Wno-ignored-qualifiers -Wno-stringop-truncation -Wno-cast-function-type"
 
 RUN apk add git && \
