@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2022, Serhiy Makarenko
 
-FROM node:14-alpine AS base
+FROM node:14-alpine3.11 AS base
 
 ENV CHROME_BIN="/usr/bin/chromium-browser"
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
