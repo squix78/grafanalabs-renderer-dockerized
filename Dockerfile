@@ -15,7 +15,7 @@ RUN apk --no-cache upgrade && \
 
 FROM base as build
 
-ENV GRAFANA_RENDERER_VERSION=3.1.0
+ENV GRAFANA_RENDERER_VERSION=3.2.0
 ENV CXXFLAGS="-Wno-ignored-qualifiers -Wno-stringop-truncation -Wno-cast-function-type"
 
 RUN apk add git && \
